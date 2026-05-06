@@ -10,18 +10,18 @@
 
 ## ✨ Fitur Utama
 
-- **AI Consultation System (DSS)**: Mengintegrasikan **Google Gemini AI API** sebagai Sistem Pendukung Keputusan (SPK) untuk memberikan rekomendasi paket vendor yang dipersonalisasi berdasarkan budget dan kebutuhan pengguna[cite: 1].
-- **Streamlined Guest Checkout**: Mengoptimalkan tingkat konversi dengan memungkinkan pengguna melakukan pemesanan paket vendor tanpa harus melalui proses pendaftaran/login yang panjang[cite: 1].
-- **Robust Admin Panel**: Menggunakan **Filament PHP** untuk manajemen data vendor, kategori, dan pemantauan pesanan secara real-time yang kuat dan intuitif[cite: 1].
-- **API Integrated**: Arsitektur yang mendukung integrasi endpoint untuk pengembangan mobile atau platform eksternal di masa depan[cite: 1].
+- **AI Consultation System (DSS)**: Mengintegrasikan **Google Gemini AI API** sebagai Sistem Pendukung Keputusan (SPK) untuk memberikan rekomendasi paket vendor yang dipersonalisasi berdasarkan budget dan kebutuhan pengguna.
+- **Streamlined Guest Checkout**: Mengoptimalkan tingkat konversi dengan memungkinkan pengguna melakukan pemesanan paket vendor tanpa harus melalui proses pendaftaran/login yang panjang.
+- **Robust Admin Panel**: Menggunakan **Filament PHP** untuk manajemen data vendor, kategori, dan pemantauan pesanan secara real-time yang kuat dan intuitif.
+- **API Integrated**: Arsitektur yang mendukung integrasi endpoint untuk pengembangan mobile atau platform eksternal di masa depan.
 
 ## 🛠️ Tech Stack
 
-*   **Core:** Laravel 11[cite: 1]
-*   **Admin Panel:** Filament PHP[cite: 1]
-*   **Styling:** Tailwind CSS[cite: 1]
-*   **Intelligence:** Google Gemini AI API[cite: 1]
-*   **Database:** MySQL / SQLite[cite: 1]
+*   **Core:** Laravel 11
+*   **Admin Panel:** Filament PHP
+*   **Styling:** Tailwind CSS
+*   **Intelligence:** Google Gemini AI API
+*   **Database:** MySQL / SQLite
 
 ## 🚀 Panduan Instalasi
 
