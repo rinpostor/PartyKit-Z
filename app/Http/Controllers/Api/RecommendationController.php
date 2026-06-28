@@ -72,8 +72,15 @@ class RecommendationController extends Controller
             }
 
             $rawText = $result['candidates'][0]['content']['parts'][0]['text'] ?? '';
-            $cleanJson = str_replace(['```json', '```', "\n"], '', $rawText);
-            $recommendations = json_decode($cleanJson, true);
+            
+            // Extract JSON array using regex to avoid issues with markdown wrapping or extra whitespace/newlines
+            if (preg_match('/\[\s*\{.*\}\s*\]/s', $rawText, $matches)) {
+                $cleanJson = $matches[0];
+            } else {
+                $cleanJson = str_replace(['```json', '```'], '', $rawText);
+            }
+            
+            $recommendations = json_decode(trim($cleanJson), true);
 
             if (json_last_error() !== JSON_ERROR_NONE || !is_array($recommendations)) {
                  return response()->json(['message' => 'Gagal memproses jawaban AI. Coba lagi.'], 500);
@@ -92,7 +99,9 @@ class RecommendationController extends Controller
                         'price' => $originalPackage->harga,
                         'capacity' => $originalPackage->capacity,
                         'rating' => $originalPackage->rating,
-                        'image_url' => $originalPackage->gambar_utama ? asset('storage/' . $originalPackage->gambar_utama) : null,
+                        'image_url' => $originalPackage->gambar_utama
+                            ? (str_starts_with($originalPackage->gambar_utama, 'http') ? $originalPackage->gambar_utama : asset('storage/' . $originalPackage->gambar_utama))
+                            : 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80',
                         'ai_reason' => $rec['reason']
                     ];
                 }

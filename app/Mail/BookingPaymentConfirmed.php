@@ -13,7 +13,6 @@ class BookingPaymentConfirmed extends Mailable
 
     public $order;
 
-    // Terima data Order saat class ini dipanggil
     public function __construct(Order $order)
     {
         $this->order = $order;
@@ -22,6 +21,6 @@ class BookingPaymentConfirmed extends Mailable
     public function build()
     {
         return $this->subject('Konfirmasi Pembayaran - PartyKit\'Z')
-                    ->view('emails.payment_confirmed');
+            ->view('emails.payment_confirmed');
     }
 }

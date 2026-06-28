@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
+// Health check untuk Render
+Route::get('/up', function () {
+    return response('OK', 200);
+});
+
 // Halaman Utama (Home)
 Route::get('/', function () {
     return view('home');

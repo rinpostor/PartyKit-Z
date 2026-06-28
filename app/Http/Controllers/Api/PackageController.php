@@ -33,7 +33,9 @@ class PackageController extends Controller
                 'description' => $item->deskripsi_paket ?? 'Tidak ada deskripsi',
                 'category' => $item->category ? $item->category->nama_kategori : 'Umum',
                 'category_slug' => $item->category ? $item->category->slug : null,
-                'image_url' => $item->gambar_utama ? asset('storage/' . $item->gambar_utama) : null,
+                'image_url' => $item->gambar_utama
+                    ? (str_starts_with($item->gambar_utama, 'http') ? $item->gambar_utama : asset('storage/' . $item->gambar_utama))
+                    : 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80',
             ];
         });
 
